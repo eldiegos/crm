@@ -15,7 +15,7 @@ import lombok.AccessLevel;
 
 @Getter
 @Setter
-@ToString(onlyExplicitlyIncluded = true)
+@ToString(onlyExplicitlyIncluded = true, callSuper=true)
 @EqualsAndHashCode(callSuper=false)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
