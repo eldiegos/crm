@@ -9,8 +9,8 @@ CREATE TABLE contact (
   surname1 VARCHAR(50) ,
   surname2 VARCHAR(50) ,
   
-  created_time TIME,
-  updated_time TIME
+  created_at TIME,
+  modified_at TIME
 
     
 	

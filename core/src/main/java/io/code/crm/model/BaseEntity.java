@@ -4,6 +4,10 @@ import java.time.Instant;
 import java.util.UUID;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,14 +29,25 @@ public abstract class BaseEntity {
     @ToString.Include
     private String name;
 
-    private Instant createdTime;
-    private Instant updatedTime;
+    /*
+    @CreatedBy
+    User creator;
+    
+    @LastModifiedBy
+    User modifier;
+    */
+
+    @CreatedDate
+    private Instant createdAt;
+    
+    @LastModifiedDate
+    private Instant modifiedAt;
 
     protected BaseEntity(@NonNull String name) {
 
         this.name = name.length() > 100 ? name.substring(0, 100) : name;
-        this.createdTime = Instant.now();
-        this.updatedTime = Instant.now();
+        //this.createdTime = Instant.now();
+        //this.updatedTime = Instant.now();
         this.id = UUID.randomUUID();
     }
 
