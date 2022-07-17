@@ -2319,3 +2319,21 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
 2022-07-14 08:39:25,154 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringApplicationShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
 2022-07-14 08:39:25,158 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
 2022-07-14 08:39:25,161 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2022-07-17 17:39:40,191 INFO org.springframework.boot.StartupInfoLogger [main] Starting RestApplicationTests using Java 11.0.8 on LAPTOP-VPPV1KM8 with PID 15980 (started by diego in C:\github\crm\rest)
+2022-07-17 17:39:40,195 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-07-17 17:39:41,415 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-17 17:39:41,540 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 102 ms. Found 1 JPA repository interfaces.
+2022-07-17 17:39:43,771 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-07-17 17:39:44,326 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-07-17 17:39:44,714 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-17 17:39:44,875 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-07-17 17:39:45,337 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-17 17:39:45,712 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-07-17 17:39:47,241 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-17 17:39:47,266 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-17 17:39:48,610 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-17 17:39:49,930 INFO org.springframework.boot.StartupInfoLogger [main] Started RestApplicationTests in 10.624 seconds (JVM running for 13.341)
+2022-07-17 17:39:50,845 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-07-17 17:39:50,847 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [SpringApplicationShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-07-17 17:39:50,857 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2022-07-17 17:39:50,862 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

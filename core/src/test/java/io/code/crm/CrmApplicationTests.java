@@ -1,4 +1,4 @@
-package io.code;
+package io.code.crm;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -8,8 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import io.code.crm.model.contact.Contact;
-import io.code.crm.service.ContactService;
+import io.code.crm.core.model.contact.Contact;
+import io.code.crm.core.service.ContactService;
 
 @SpringBootTest
 class CrmApplicationTests {

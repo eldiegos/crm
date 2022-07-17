@@ -8,12 +8,11 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import io.code.crm.model.contact.Contact;
-import io.code.crm.service.ContactServiceFull;
+import io.code.crm.core.model.contact.Contact;
+import io.code.crm.core.service.ContactServiceFull;
 
 
 @SpringBootTest
-
 class RestApplicationTests {
 
 

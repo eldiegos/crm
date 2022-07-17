@@ -12,7 +12,6 @@
 	<groupId>io.code.crm</groupId>
     <artifactId>crm-core</artifactId>
 	<name>crm-core</name>
-	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
     
     <description>CRM Service</description>
