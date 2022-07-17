@@ -1,9 +1,9 @@
-package io.code.crm.model.contact;
+package io.code.crm.core.model.contact;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import io.code.crm.model.BaseEntity;
+import io.code.crm.core.model.BaseEntity;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

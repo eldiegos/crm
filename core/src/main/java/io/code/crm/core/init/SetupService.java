@@ -1,4 +1,4 @@
-package io.code.crm.init;
+package io.code.crm.core.init;
 
 import org.springframework.stereotype.Service;
 

@@ -1,11 +1,11 @@
-package io.code.crm.service;
+package io.code.crm.core.service;
 
 
 import java.util.List;
 import java.util.UUID;
 
-import io.code.crm.model.contact.Contact;
-import io.code.crm.model.contact.ContactNotFoundException;
+import io.code.crm.core.model.contact.Contact;
+import io.code.crm.core.model.contact.ContactNotFoundException;
 
 public interface IContactService {
 

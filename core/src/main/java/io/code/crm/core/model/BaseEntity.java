@@ -1,19 +1,20 @@
-package io.code.crm.model;
+package io.code.crm.core.model;
 
 import java.time.Instant;
 import java.util.UUID;
+
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
+import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.ToString;
-import lombok.AccessLevel;
 
 @Getter
 @ToString(onlyExplicitlyIncluded = true)

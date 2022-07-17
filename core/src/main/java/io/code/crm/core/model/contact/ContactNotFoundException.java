@@ -1,4 +1,4 @@
-package io.code.crm.model.contact;
+package io.code.crm.core.model.contact;
 
 public class ContactNotFoundException extends Exception {
 

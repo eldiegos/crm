@@ -1,4 +1,4 @@
-package io.code;
+package io.code.crm;
 
 import javax.annotation.PostConstruct;
 
@@ -6,7 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import io.code.crm.init.SetupService;
+import io.code.crm.core.init.SetupService;
 import lombok.extern.java.Log;
 
 @Log

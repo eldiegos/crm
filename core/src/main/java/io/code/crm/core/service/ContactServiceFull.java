@@ -1,11 +1,11 @@
-package io.code.crm.service;
+package io.code.crm.core.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import io.code.crm.model.contact.Contact;
+import io.code.crm.core.model.contact.Contact;
 import lombok.extern.java.Log;
 
 @Log
