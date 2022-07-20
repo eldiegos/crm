@@ -1,4 +1,4 @@
-package io.code.crm.rest;
+package io.code.crm.model.contact;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -11,12 +11,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import io.code.crm.core.model.contact.Contact;
 import io.code.crm.core.service.contact.ContactService;
 
-
 @SpringBootTest
-class RestApplicationTests {
+class ContactTests {
 
-
-
+	@Test
+	void contextLoads() {
+	}
 
 	@Autowired
 	ContactService contactService;
@@ -24,11 +24,11 @@ class RestApplicationTests {
 	@Test
 	void testGetAllContacts(){
 
-		List<Contact> contactList = this.contactService.getContactList();
-		for(Contact cc : contactList){
+		List<Contact> rList = this.contactService.getContactList();
+		for(Contact cc : rList){
 			System.out.println(cc.toString());
 		}
-		assertTrue(contactList!=null && !contactList.isEmpty());
+		assertTrue(rList!=null && !rList.isEmpty());
 	}
 
 }

@@ -1,4 +1,4 @@
-package io.code.crm;
+package io.code.crm.model.account;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -8,27 +8,27 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import io.code.crm.core.model.contact.Contact;
-import io.code.crm.core.service.ContactService;
+import io.code.crm.core.model.account.Account;
+import io.code.crm.core.service.account.AccountService;
 
 @SpringBootTest
-class CrmApplicationTests {
+class AccountTests {
 
 	@Test
 	void contextLoads() {
 	}
 
 	@Autowired
-	ContactService contactService;
+	AccountService accountService;
 	
 	@Test
-	void testGetAllContacts(){
+	void testGetAllAccounts(){
 
-		List<Contact> contactList = this.contactService.getContactList();
-		for(Contact cc : contactList){
+		List<Account> rList = this.accountService.getAccountList();
+		for(Account cc : rList){
 			System.out.println(cc.toString());
 		}
-		assertTrue(contactList!=null && !contactList.isEmpty());
+		assertTrue(rList!=null && !rList.isEmpty());
 	}
 
 }

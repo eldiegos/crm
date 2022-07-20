@@ -1,10 +1,8 @@
-package io.code.crm.core.service;
+package io.code.crm.core.model.contact;
 
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import io.code.crm.core.model.contact.Contact;
 
 public interface ContactRepository extends JpaRepository<Contact, UUID> {
 }

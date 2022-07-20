@@ -1,4 +1,4 @@
-package io.code.crm.core.service;
+package io.code.crm.core.service.contact;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import io.code.crm.core.model.EntityNotFoundException;
 import io.code.crm.core.model.contact.Contact;
-import io.code.crm.core.model.contact.ContactNotFoundException;
+import io.code.crm.core.model.contact.ContactException;
+import io.code.crm.core.model.contact.ContactRepository;
 import lombok.extern.java.Log;
 
 @Log
@@ -22,10 +24,17 @@ public class ContactService implements IContactService {
 	@Autowired
 	private ContactRepository contactRepository;
 
-	@Override
-	public Contact getContact(UUID id) throws ContactNotFoundException {
+	
 
-		log.info("Using DataServiceRepo Data Access");
+    @Override
+    public List<Contact> getContactList() {
+        return this.contactRepository.findAll();
+    }
+
+	@Override
+	public Contact getByUuid(UUID id) throws EntityNotFoundException {
+		
+		log.fine("Using DataServiceRepo Data Access");
 
         Contact c;
 
@@ -35,13 +44,8 @@ public class ContactService implements IContactService {
 			c = opUser.get();
 			
 		} else
-			throw new ContactNotFoundException("The contact does not exists");
+			throw new EntityNotFoundException(Contact.class, "The contact does not exists");
 
 		return c;
 	}
-
-    @Override
-    public List<Contact> getContactList() {
-        return this.contactRepository.findAll();
-    }
 }

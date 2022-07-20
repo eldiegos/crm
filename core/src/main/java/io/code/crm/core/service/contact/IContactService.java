@@ -1,16 +1,16 @@
-package io.code.crm.core.service;
+package io.code.crm.core.service.contact;
 
 
 import java.util.List;
 import java.util.UUID;
 
+import io.code.crm.core.model.EntityNotFoundException;
 import io.code.crm.core.model.contact.Contact;
-import io.code.crm.core.model.contact.ContactNotFoundException;
 
 public interface IContactService {
 
 	List<Contact> getContactList();
 
-	Contact getContact(UUID id) throws ContactNotFoundException;
+	Contact getByUuid(UUID id) throws EntityNotFoundException;
 
 }

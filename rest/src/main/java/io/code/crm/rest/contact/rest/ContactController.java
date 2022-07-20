@@ -7,18 +7,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.code.crm.core.model.contact.Contact;
-import io.code.crm.core.service.ContactServiceFull;
+import io.code.crm.core.service.contact.ContactService;
 
 @RestController
 public class ContactController {
 
 	@Autowired
-	ContactServiceFull contactServiceFull;
+	ContactService contactService;
 
 	
 	@GetMapping("/api/contacts")
 	public List<Contact> getContacts() {
-		return contactServiceFull.getContactList();
+		return contactService.getContactList();
 	}
 
 }
