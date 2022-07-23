@@ -41,4 +41,14 @@ class CountryTests {
 
 		assertTrue(cc.getCod2().equalsIgnoreCase("ES"));
 	}
+	
+	@Test
+	void testGetCountryByCode3() {
+
+		Country cc = this.countryService.getCountryByCode3("ESP");
+
+		System.out.println(cc.toString());
+
+		assertTrue(cc.getCod3().equalsIgnoreCase("ESP"));
+	}
 }

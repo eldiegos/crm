@@ -33,13 +33,14 @@ public class CountryService implements ICountryService {
 	private CountryRepository countryRepository;
 
 	@Override
-	public Country getByUuid(UUID id) throws EntityNotFoundException {
+	public Country getByUuid(String id) throws EntityNotFoundException {
 
 		log.fine("Using DataServiceRepo Data Access");
 
 		Country obj;
 
-		Optional<Country> opFind = countryRepository.findById(id);
+		UUID uid = UUID.fromString(id);
+		Optional<Country> opFind = countryRepository.findById(uid);
 		if (opFind.isPresent()) {
 
 			obj = opFind.get();
@@ -66,4 +67,16 @@ public class CountryService implements ICountryService {
 		return result;
     	
     }
+
+	@Override
+	public Country getCountryByCode3(String code3) {
+		
+		List<Country> all = this.countryRepository.findAll();
+		Country c = all.stream()
+				  .filter(country -> code3.equals(country.getCod3()))
+				  .findAny()
+				  .orElse(null);
+		return c;
+		
+	}
 }
