@@ -4,43 +4,46 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<parent>
-        <groupId>io.code</groupId>
-        <artifactId>crm</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
-	
+		<groupId>io.code</groupId>
+		<artifactId>crm</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
 	<groupId>io.code.crm</groupId>
-	<artifactId>crm-rest</artifactId>
-	<name>crm-rest</name>
-	<description>REST api project for Spring Boot</description>
-	
+	<artifactId>crm-graph</artifactId>
+	<name>crm-graph</name>
+	<packaging>jar</packaging>
+
+	<description>Graph for CRM</description>
 	<properties>
+		<java.version>17</java.version>
 	</properties>
-
 	<dependencies>
-
-		<dependency>
-			<groupId>io.code.crm</groupId>
-			<artifactId>crm-core</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-graphql</artifactId>
 		</dependency>
-
-		
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webflux</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.graphql</groupId>
+			<artifactId>spring-graphql-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
+			
 		</plugins>
 	</build>
 
