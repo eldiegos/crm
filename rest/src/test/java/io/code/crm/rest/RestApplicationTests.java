@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import io.code.crm.core.model.contact.Contact;
-import io.code.crm.core.service.contact.ContactService;
+import io.code.crm.core.service.contact.IContactService;
 
 
 @SpringBootTest
@@ -19,7 +19,7 @@ class RestApplicationTests {
 
 
 	@Autowired
-	ContactService contactService;
+	IContactService contactService;
 	
 	@Test
 	void testGetAllContacts(){

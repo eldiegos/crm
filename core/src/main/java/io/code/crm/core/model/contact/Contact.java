@@ -1,9 +1,11 @@
 package io.code.crm.core.model.contact;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
-import io.code.crm.core.model.BaseEntity;
+import io.code.crm.core.model.NamedEntity;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -19,10 +21,17 @@ import lombok.ToString;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(name = "contact")
-public class Contact extends BaseEntity {
+public class Contact extends NamedEntity {
     
+	@Size(min = 2, max = 50)
+	@Column(nullable = false, length = 50)
     private String firstName;
+	
+	@Size(min = 2, max = 50)
+	@Column(nullable = false, length = 50)
     private String surname1;
+	
+	@Column(length = 50)
     private String surname2;
 
     public Contact(@NonNull String firstName, @NonNull String surname1){
