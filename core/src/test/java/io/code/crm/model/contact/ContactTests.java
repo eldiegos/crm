@@ -9,8 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import io.code.crm.core.model.contact.Contact;
-import io.code.crm.core.model.contact.ContactDao;
-import io.code.crm.core.service.contact.ContactService;
+import io.code.crm.core.service.contact.IContactService;
 
 @SpringBootTest
 class ContactTests {
@@ -20,7 +19,7 @@ class ContactTests {
 	}
 
 	@Autowired
-	ContactService contactService;
+	IContactService contactService;
 	
 	@Test
 	void testGetAllContacts(){
@@ -33,15 +32,6 @@ class ContactTests {
 	}
 
 	
-	@Autowired
-	ContactDao contactDao;
 	
-	@Test
-	void testGetAllContactsCQ(){
-
-		List<Contact> rList = this.contactDao.findContacts("Joh", "Smit");
-		rList.stream().forEach(c -> System.out.println(c.toString()));
-		assertTrue(rList!=null && !rList.isEmpty());
-	}
 	
 }
