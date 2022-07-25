@@ -12,12 +12,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-import com.querydsl.jpa.impl.JPAQueryFactory;
-
 import io.code.crm.core.model.EntityNotFoundException;
 import io.code.crm.core.model.country.Country;
 import io.code.crm.core.model.country.CountryRepository;
-import io.code.crm.core.model.country.QCountry;
 import lombok.extern.java.Log;
 
 @Log
@@ -56,27 +53,33 @@ public class CountryService implements ICountryService {
         return this.countryRepository.findAll();
     }
     
+    
+    @Override
+	public Country getCountryByCode2(String code2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+    /*
     @Override
     public Country getCountryByCode2(String code2) {
 
+    	
     	JPAQueryFactory  query = new JPAQueryFactory (em);
 		QCountry country = QCountry.country;
-		
-
-		Country result = (Country) query.from(country).where(country.cod2.eq(code2)).fetchOne();
-		return result;
+		return (Country) query.from(country).where(country.cod2.eq(code2)).fetchOne();
     	
     }
-
+*/
 	@Override
 	public Country getCountryByCode3(String code3) {
 		
 		List<Country> all = this.countryRepository.findAll();
-		Country c = all.stream()
+		return all.stream()
 				  .filter(country -> code3.equals(country.getCod3()))
 				  .findAny()
 				  .orElse(null);
-		return c;
 		
 	}
+
+	
 }

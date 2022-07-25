@@ -2,9 +2,11 @@ package io.code.crm.core.model.contact;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import io.code.crm.core.model.AuditListener;
 import io.code.crm.core.model.NamedEntity;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -14,11 +16,13 @@ import lombok.NonNull;
 import lombok.Setter;
 import lombok.ToString;
 
+
 @Getter
 @Setter
 @ToString(onlyExplicitlyIncluded = true, callSuper=true)
 @EqualsAndHashCode(callSuper=false)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@EntityListeners(AuditListener.class)
 @Entity
 @Table(name = "contact")
 public class Contact extends NamedEntity {
