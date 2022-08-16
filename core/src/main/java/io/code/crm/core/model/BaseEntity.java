@@ -4,11 +4,13 @@ import java.time.Instant;
 import java.util.UUID;
 
 import javax.persistence.Column;
+import javax.persistence.EntityListeners;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -16,8 +18,8 @@ import lombok.ToString;
 
 @Getter
 @ToString(onlyExplicitlyIncluded = true)
-//@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
 public abstract class BaseEntity {
 
 	@Column(columnDefinition = "UUID")
@@ -43,8 +45,6 @@ public abstract class BaseEntity {
 
     protected BaseEntity() {
 
-        //this.createdTime = Instant.now();
-        //this.updatedTime = Instant.now();
         this.id = UUID.randomUUID();
     }
 

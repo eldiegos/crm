@@ -11,7 +11,9 @@ import org.springframework.stereotype.Service;
 
 import io.code.crm.core.model.EntityNotFoundException;
 import io.code.crm.core.model.contact.Contact;
+import io.code.crm.core.model.contact.ContactDTO;
 import io.code.crm.core.model.contact.ContactException;
+import io.code.crm.core.model.contact.ContactMapper;
 import io.code.crm.core.model.contact.ContactRepository;
 import lombok.extern.java.Log;
 
@@ -24,28 +26,33 @@ public class ContactService implements IContactService {
 	@Autowired
 	private ContactRepository contactRepository;
 
-	
+	@Autowired
+	private ContactMapper contactMapper;
 
     @Override
-    public List<Contact> getContactList() {
-        return this.contactRepository.findAll();
+    public List<ContactDTO> getContactList() {
+        
+    	List<Contact> contacts = this.contactRepository.findAll();
+        return this.contactMapper.toDTO(contacts);
     }
 
 	@Override
-	public Contact getByUuid(UUID id) throws EntityNotFoundException {
+	public ContactDTO getByUuid(String id) throws EntityNotFoundException {
 		
 		log.fine("Using DataServiceRepo Data Access");
 
-        Contact c;
+		ContactDTO dto;
 
-		Optional<Contact> opUser = contactRepository.findById(id);
+		UUID uid = UUID.fromString(id);
+		Optional<Contact> opUser = contactRepository.findById(uid);
 		if (opUser.isPresent()) {
 
-			c = opUser.get();
+			Contact c = opUser.get();
+			dto = this.contactMapper.toDTO(c);
 			
 		} else
 			throw new EntityNotFoundException(Contact.class, "The contact does not exists");
 
-		return c;
+		return dto;
 	}
 }

@@ -22,7 +22,7 @@ public class CountryController {
 
 	
 
-	@GetMapping("/api/country/{id}")
+	@GetMapping("/api/countries/{id}")
 	public ResponseEntity<Country> getCountry(@PathVariable(value = "id") String id) {
 
 		ResponseEntity<Country> result = null;
@@ -47,7 +47,7 @@ public class CountryController {
 	}
 	
 	
-	@GetMapping("/api/country")
+	@GetMapping("/api/countries")
 	public ResponseEntity<List<Country>> getCountries() {
 
 		ResponseEntity<List<Country>> result = null;

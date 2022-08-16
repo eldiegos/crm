@@ -22,12 +22,12 @@ import lombok.ToString;
 public class Currency extends NamedEntity {
 
 	private String cod;
-	private int currency_number;
+	private int currencyNumber;
 	
-	public Currency(@NonNull String name, @NonNull String cod, int currency_number) {
+	public Currency(@NonNull String name, @NonNull String cod, int currencyNumber) {
 		super(name);
 		this.cod=cod;
-		this.currency_number=currency_number;
+		this.currencyNumber=currencyNumber;
 	}
 	
 }

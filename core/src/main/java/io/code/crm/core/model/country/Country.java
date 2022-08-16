@@ -35,8 +35,8 @@ public class Country extends NamedEntity {
 	@Column(columnDefinition = "char(3)", nullable = false)
 	private String cod3;
 	
-	@Column(nullable = false)
-	private int country_number;
+	@Column(name="country_number", nullable = false)
+	private int countryNumber;
 	
 	@Column(nullable = false)
 	private boolean eees;
@@ -44,11 +44,11 @@ public class Country extends NamedEntity {
 	@Column(nullable = false)
 	private boolean sepa;
 
-	public Country(@NonNull String name, @NonNull String cod2, @NonNull String cod3, int country_number, boolean eees, boolean sepa) {
+	public Country(@NonNull String name, @NonNull String cod2, @NonNull String cod3, int countryNumber, boolean eees, boolean sepa) {
 		super(name);
 		this.cod2 = cod2;
 		this.cod3 = cod3;
-		this.country_number=country_number;
+		this.countryNumber=countryNumber;
 		this.eees=eees;
 		this.sepa=sepa;
 	}

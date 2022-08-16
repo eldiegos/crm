@@ -22,8 +22,6 @@ public abstract class NamedEntity extends BaseEntity {
     protected NamedEntity(@NonNull String name) {
     	super();
         this.name = name.length() > 100 ? name.substring(0, 100) : name;
-        //this.createdTime = Instant.now();
-        //this.updatedTime = Instant.now();
     }
 
     @Override

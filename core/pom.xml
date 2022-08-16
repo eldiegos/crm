@@ -19,6 +19,7 @@
 
 	<properties>
 		<querydsl.version>4.4.0</querydsl.version>
+		<modelmapper.version>3.1.0</modelmapper.version>
 	</properties>
 
 	<dependencies>
@@ -43,6 +44,14 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-jpamodelgen</artifactId>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.modelmapper/modelmapper -->
+		<dependency>
+		    <groupId>org.modelmapper</groupId>
+		    <artifactId>modelmapper</artifactId>
+		    <version>${modelmapper.version}</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>com.querydsl</groupId>
