@@ -19,7 +19,7 @@
 
 	<properties>
 		<querydsl.version>4.4.0</querydsl.version>
-		<modelmapper.version>3.1.0</modelmapper.version>
+		<modelmapper.version>3.1.1</modelmapper.version>
 	</properties>
 
 	<dependencies>
